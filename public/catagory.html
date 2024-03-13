@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        margin:0px auto;
+        width:40%;
+    }
+    input{
+        margin-bottom:10px;
+    }
+    h1{
+        display: blocl;
+        margin-left:330px;
+    }
+</style>
+<body>
+    <h1>Create the new catagory</h1>
+    <div class="container">
+        <form action="http://localhost:5000/catagory" method="post">
+            <label for="id">Catagory_id: <input name="id"></label><br>
+            <label for="name">Catagory_name :<input name="name"></label><br>
+            <button type="submit">Create Catagory</button>
+        </form>
+    </div>
+</body>
+</html>

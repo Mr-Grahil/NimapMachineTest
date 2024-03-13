@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Edit The Data</h1>
+    <form action="http://localhost:5000/final-update" method="post">
+        <label for="product_name">product_name : <input type="text" name="product_name" value="<%- result.product_name %>"></label><br>
+        <label for="product_id">product_id : <input type="number" name="product_id" value="<%- result.product_id %>" disabled></label><br>
+        <label for="catagory_id">catagory_id : <input type="number" name="catagory_id" value="<%- result.catagory_id %>"></label><br>
+        <button type="submt">Edit</button>
+    </form>
+</body>
+</html>

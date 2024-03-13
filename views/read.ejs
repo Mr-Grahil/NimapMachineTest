@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            margin-left: 450px;
+            
+        }
+        .card h2{
+            color:blue;
+            margin-left:30px;
+        }
+        .card{
+            border: 2px solid black;
+            width:20%;
+            margin: 15px;
+            height: 170px;
+        }
+        .container{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        #id{
+            margin-left:30px;
+            margin-top :10px;
+        }
+        #cat{
+            margin-left:30px;
+            margin-top:10px;
+        }
+        #delete{
+            margin-left:10px;
+        }
+        #edit{
+            margin-left:10px;
+            
+        }
+        .box{
+            /* border:2px solid black; */
+            width:30%;
+            height: 50px;
+            margin:0px auto;
+            display: flex;
+            justify-content: center;
+            gap:1;
+        }
+        .box a{
+            border:1px solid black;
+            text-decoration: none;
+            display: block;
+            width:3%;
+            padding:2px;
+            font-size: 15px;
+            background-color: rgb(39, 39, 99);
+            color: white;
+            margin:3px;
+            height:18px;
+        }
+        .box a:active{
+            color: black;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bigcontainer">
+        <h1>See the product list</h1>
+        <% rows.map((eachdata)=>{  %>
+            <div class="container">
+                <div class="card">
+                    <h2><%- eachdata.product_name %></h2>
+                    <p id="id">product_id: <%- eachdata.product_id %></p>
+                    <p id="cat">Catagory : <%- eachdata.catagory_id %></p>
+                    <a href="/delete-data?id=<%- eachdata.product_id %>" id="delete" >delete</a>
+                    <a href="/edit-data?id=<%- eachdata.product_id %>" id="edit">Edit</a>
+                </div>
+            </div>
+       <%  }) %>
+        
+    </div>
+    <footer>
+        <div class="box">
+            <% m= Math.ceil(n/3); %>
+            
+            <% for(let i=1;i<=m;i++){ %>
+                <a href="/data?num=<%-i%>"><%-i%></a>
+            <% }%>
+
+        </div>
+    </footer>
+</body>
+</html>
